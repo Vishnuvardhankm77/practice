@@ -4,7 +4,7 @@ import Galleries from './Data';
 
 function App() {
   return (
-    <div className="App">
+    <div>
         <Galleries></Galleries>
     </div>
   );
