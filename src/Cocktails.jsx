@@ -9,27 +9,33 @@ function Drinks(){
         })
     },[])
     console.log(tails)
+
+    function home(){
+
+    }
+
     return(
         <div >
             <div className="home">
-                <div>The Cocktail DB</div>
-                <div>Home</div>
-                <div>About</div>
+                <div style={{color:"green"}}>The Cocktail DB</div>
+                <div onClick={home()}>Home</div>
+                <div >About</div>
             </div>
             <div className="search">
-                <h3>Search your favorite Cocktail</h3>
-                <input type="text" className="inp"/>
+                <h3 style={{fontFamily:"Segoe UI",color:"green"}}>Search your favorite Cocktail</h3>
+                <input type="text" className="inp" placeholder="Enter Here"/>
             </div>
+                <h1 style={{fontFamily:"Segoe UI"}}>Cocktails</h1>
            <div className="main">
            {
                 tails.drinks?.map((a)=>{
                     return  <div className="maindiv">
                                 <img className="img" src={a.strDrinkThumb} alt="" />
-                                <div>
+                                <div className="div">
                                     <h1>{a.strDrink}</h1>
                                     <h3>{a.strGlass}</h3>
-                                    <h3>{a.strAlcoholic}</h3>
-                                    <button>Details</button>
+                                    <h5>{a.strAlcoholic}</h5>
+                                    <button className="btn" >Details</button>
                                 </div>
                             </div>
                 })
