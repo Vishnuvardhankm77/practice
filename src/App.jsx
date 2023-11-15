@@ -4,10 +4,8 @@ import Component from './Data';
 
 function App() {
   return (
-    <div>
-      <center>
+    <div className='body'>
       <Component></Component>
-      </center>
     </div>
   );
 }
