@@ -34,18 +34,38 @@ function Students(){
           }
     ])
 
-    // function fnaz(){
-
-    // }
+    function sortStudents(key,order){
+        var temp = [...student];
+        temp.sort((s1,s2)=>{
+          if(order==='asc'){
+            if(s1[key]>s2[key]){
+              return 1
+            }
+            else{
+              return -1
+            }
+          }
+          if(order==='dsc'){
+            if(s1[key]>s2[key]){
+              return -1
+            }
+            else{
+              return 1
+            }
+          }
+        });
+        setStudent([...temp])
+      }
+      
     return (
         <div className="main">
             <h1>Students</h1>
-            <button >sort by FirstName(A-z)</button>
-            <button >sort by FirstName(z-A)</button>
-            <button>sort by LastName(A-z)</button>
-            <button>sort by LastName(z-A)</button>
-            <button>sort by Gender(z-A)</button>
-            <button>sort by Gender(z-A)</button>
+            <button onClick={()=>{sortStudents('firstname','asc')}}>sort by FirstName(A-z)</button>
+            <button onClick={()=>{sortStudents('firstname','dsc')}}>sort by FirstName(z-A)</button>
+            <button onClick={()=>{sortStudents('lastname','asc')}}>sort by LastName(A-z)</button>
+            <button onClick={()=>{sortStudents('lastnme','dsc')}}>sort by LastName(z-A)</button>
+            <button onClick={()=>{sortStudents('gender','asc')}}>sort by Gender(z-A)</button>
+            <button onClick={()=>{sortStudents('gender','dsc')}}>sort by Gender(z-A)</button>
             <table border={2} width={700}>
                 <thead>
                     <th>Firstname</th>
